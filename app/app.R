@@ -2,13 +2,15 @@ library(shiny)
 library(shinythemes)
 source("util.R")
 
+# Load fuzzy system script.
 system = util$setFuzzySystem()
 
-# Define UI for application
+# Define UI for application.
 ui = fluidPage(
+    # Set theme for UI.
     theme = shinytheme("readable"),
 
-    # Application title
+    # Application title.
     titlePanel("Finding out if computer science is a good career for you!"),
     helpText("Set the sliders and click on \'Find Out!\'."),
     
@@ -72,6 +74,8 @@ ui = fluidPage(
                plotOutput("resultGraphID")
         )
     ),
+    
+    # Plot fuzzy system and membership functions.
     fluidRow(
         column(12, align = "center",
                h2(textOutput("systemTextID"))),
@@ -93,9 +97,11 @@ ui = fluidPage(
     )
 )
 
-# Define server logic
+# Define server logic.
 server = function(input, output) {
+    # All back end processing is done once the "Generate!" button is pressed.
     observeEvent(input$findOutButtonID, {
+        # Pass slider inputs to the fuzzy system set by the util script.
         inference = fuzzy_inference(
             system, list(
                 mathAffinity = input$sliMathID,
@@ -116,6 +122,7 @@ server = function(input, output) {
             "Fuzzy System"
         })
         
+        # Plot membership functions.
         output$systemGraph1ID = renderPlot({
             plot(system[[1]]$mathAffinity)
         })
@@ -140,5 +147,5 @@ server = function(input, output) {
     })
 }
 
-# Run the application 
+# Run the application.
 shinyApp(ui = ui, server = server)
