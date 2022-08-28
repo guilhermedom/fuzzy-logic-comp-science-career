@@ -21,10 +21,11 @@ ui = fluidPage(
         column(4, align = "center",
                sliderInput("sliMathID",
                            "How much do you like math?",
+                           value = 90,
                            min = 0,
                            max = 100,
                            step = 5,
-                           value = 90)
+                           width = '80%')
         ),
         column(4, align = "center",
                sliderInput("sliInterID",
@@ -32,41 +33,46 @@ ui = fluidPage(
                            value = 30,
                            min = 0,
                            max = 100,
-                           step = 5)
+                           step = 5,
+                           width = '80%')
         ),
         column(4, align = "center",
                sliderInput("sliCodeID",
                            "How much do you like writing code?",
+                           value = 95,
                            min = 0,
                            max = 100,
                            step = 5,
-                           value = 95)
+                           width = '80%')
         ),
     ),
     fluidRow(
         column(4, align = "center",
                sliderInput("sliLeadID",
                            "How strong do you think your leadership skills are?",
+                           value = 35,
                            min = 0,
                            max = 100,
                            step = 5,
-                           value = 35)
+                           width = '80%')
         ),
         column(4, align = "center",
                sliderInput("sliStudyID",
                            "How much do you like to study?",
+                           value = 90,
                            min = 0,
                            max = 100,
                            step = 5,
-                           value = 90)
+                           width = '80%')
         ),
         column(4, align = "center",
                sliderInput("sliCommID",
                            "How would you rate your communication skills?",
+                           value = 45,
                            min = 0,
                            max = 100,
                            step = 5,
-                           value = 45)
+                           width = '80%')
         )
     ),
     fluidRow(
