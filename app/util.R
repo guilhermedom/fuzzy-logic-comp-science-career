@@ -1,9 +1,13 @@
 library(sets)
 
+# All variables range between 0 and 100.
 sets_options("universe", seq(0, 100, 1))
 
+# Create namespace for the functions in this script.
 util = new.env()
 
+# Variables are set like this according to what the author believes is more
+# related to computer science.
 setVariables = function() {
     variables = set(
         mathAffinity = fuzzy_partition(
@@ -32,14 +36,12 @@ setVariables = function() {
             sd = 10
         ),
         commAffinity = fuzzy_partition(
-            varnames = c(commMin = 40, commMinor = 50,
-                         commMedian = 60, commMajor = 70,
-                         commMax = 75),
+            varnames = c(commMin = 40, commMinor = 50, commMedian = 60,
+                         commMajor = 70, commMax = 75),
             sd = 10
         ),
         class = fuzzy_partition(
-            varnames = c(poor = 10, average = 50, good = 75,
-                         excellent = 95),
+            varnames = c(poor = 10, average = 50, good = 75, excellent = 95),
             sd = 10
         )
     )
@@ -47,6 +49,8 @@ setVariables = function() {
     variables
 }
 
+# Following rules were defined according to what the author believes is more
+# related to computer science.
 setRules = function() {
     rules = set(
         fuzzy_rule(mathAffinity %is% mathMax
@@ -149,6 +153,7 @@ setRules = function() {
     rules
 }
 
+# Export function to other scripts that load this script.
 util$setFuzzySystem = function() {
     system = fuzzy_system(setVariables(), setRules())
     
