@@ -11,8 +11,11 @@ ui = fluidPage(
     theme = shinytheme("readable"),
 
     # Application title.
-    titlePanel("Finding out if computer science is a good career for you!"),
-    helpText("Set the sliders and click on \'Find Out!\'."),
+    titlePanel(h1(align="center", "Find out if computer science is a good
+                  career for you!"),
+               windowTitle = "Find out if computer science is a good
+                  career for you!"),
+    h5(align="center", helpText("Set the sliders and click on \'Find Out!\'.")),
     
     fluidRow(
         column(4, align = "center",
