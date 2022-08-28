@@ -16,11 +16,11 @@ Fuzzy logic, in a web app, evaluating how much compatibility a person has with t
 
 A sample from the user interface can be seen next:
 
-![ui_fuzzy-logic-comp-science-career1](https://user-images.githubusercontent.com/33037020/183269411-f0b8d3f6-2e1a-4ce0-9077-66f4906bbd9b.JPG)
+![ui_fuzzy-logic-comp-science-career1](https://user-images.githubusercontent.com/33037020/187056463-611489d4-4dab-4fde-bd05-f3f7c1b5d04e.JPG)
 
 Fuzzy membership functions are made transparent as well, so that users can understand better the compatibility estimation:
 
-![ui_fuzzy-logic-comp-science-career2](https://user-images.githubusercontent.com/33037020/183269432-131ad3e8-60e0-47b1-9fbf-d75ae2a20085.JPG)
+![ui_fuzzy-logic-comp-science-career2](https://user-images.githubusercontent.com/33037020/187056464-8209cbfa-0713-4ece-98a6-aec688988da5.JPG)
 
 *[Shiny] is a framework that allows users to develop web apps using R and embedded web languages, such as CSS and HTML. Shiny apps focus on objectiveness and simplicity: only one or two R scripts have all the code for the app.*
 
