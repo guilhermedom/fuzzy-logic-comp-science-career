@@ -72,11 +72,15 @@ ui = fluidPage(
     fluidRow(
         column(12, align = "center",
                actionButton("findOutButtonID", "Find Out!"),
-               helpText("The red line shows your compatibility degree with the
-                        computer science career."),
-               plotOutput("resultGraphID")
+               
+               hr(),
+               
+               plotOutput("resultGraphID"),
+               textOutput("plotHintID")
         )
     ),
+    
+    br(),
     
     # Plot fuzzy system and membership functions.
     fluidRow(
@@ -115,17 +119,21 @@ server = function(input, output) {
                 commAffinity = input$sliCommID
             )
         )
-    
+        
         output$resultGraphID = renderPlot({
-            plot(system$variables$class)
+            plot(system$variables$class,
+                 main = "Affinity with the Computer Science Career")
             lines(inference, col = "red", lwd=4)
         })
-        
-        output$systemTextID = renderText({
-            "Fuzzy System"
+        output$plotHintID = renderText({
+            "The red line shows your compatibility degree with the computer
+            science career."
         })
         
         # Plot membership functions.
+        output$systemTextID = renderText({
+            "Fuzzy System"
+        })
         output$systemGraph1ID = renderPlot({
             plot(system[[1]]$mathAffinity)
         })
