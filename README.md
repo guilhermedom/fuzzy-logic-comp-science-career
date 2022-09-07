@@ -2,6 +2,14 @@
 
 Fuzzy logic, in a web app, evaluating how much compatibility a person has with the computer science career.
 
+---
+
+### Usage
+
+App currently deployed and runnable at: https://domdatascience.shinyapps.io/fuzzy-logic-comp-science-career/
+
+### App Features
+
 * Set of fuzzy partitions attribute weight to different characteristics and preferences in a person;
 * Fuzzy rules combine the different traits to define membership functions;
 * The app user can set 6 different variables considering his skills and traits:
@@ -13,6 +21,8 @@ Fuzzy logic, in a web app, evaluating how much compatibility a person has with t
     6. Communication skills.
 * The fuzzy system is shown on the interface with membership functions for each characteristic;
 * User can see the final membership functions and a red line showing his estimated level of compatibility with the computer science career.
+
+### User Interface Sample
 
 A sample from the user interface can be seen next:
 
